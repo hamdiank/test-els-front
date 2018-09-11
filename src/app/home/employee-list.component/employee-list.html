@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employe of (employee$ | async); let i=index">
+    <td>{{i}}</td>
+    <td>{{employe?.firstName}}</td>
+    <td>{{employe?.lastName}}</td>
+  </tr>
+  </tbody>
+  <div class="error" *ngIf="(employee$ | async)?.message != null ">
+    {{(employee$ | async)?.message}}
+  </div>
+</table>
